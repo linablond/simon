@@ -10,7 +10,6 @@ $(".btn").on("click", eventHandler);
 
 function eventHandler(event) {
     userChosenColor = event.delegateTarget.id;
-    playSound(userChosenColor);
     animatePress(userChosenColor);
     userClickedPattern.push(userChosenColor);
     checkAnswer(userClickedPattern.length - 1);
@@ -51,7 +50,6 @@ function nextSequence() {
             var button = $("#" + randomChosenColor);
             button.fadeOut(100).fadeIn(100);
 
-            playSound(randomChosenColor);
             gamepattern.push(randomChosenColor);
             counter++;
             if (counter === level) {
